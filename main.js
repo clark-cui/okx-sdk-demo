@@ -9,8 +9,9 @@ document.querySelector('#app').innerHTML = `
   <button class="connect-btn">connect wallet</button>
   </div>
 `
+let okxUniversalProvider= null;
 const initFunc = async()=>{
-    const okxUniversalProvider = await OKXUniversalProvider.init({
+     okxUniversalProvider = await OKXUniversalProvider.init({
         dappMetaData: {
             name: "application name",
             icon: "application icon url"
