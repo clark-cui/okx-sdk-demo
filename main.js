@@ -9,14 +9,16 @@ document.querySelector('#app').innerHTML = `
   <button class="connect-btn">connect wallet</button>
   </div>
 `
-
-const okxUniversalProvider = await OKXUniversalProvider.init({
-    dappMetaData: {
-        name: "application name",
-        icon: "application icon url"
-    },
-})
-console.log(okxUniversalProvider,'okxUniversalProvider')
+const initFunc = async()=>{
+    const okxUniversalProvider = await OKXUniversalProvider.init({
+        dappMetaData: {
+            name: "application name",
+            icon: "application icon url"
+        },
+    })
+    console.log(okxUniversalProvider,'okxUniversalProvider')
+}
+initFunc();
 
 const btn = document.querySelector('.connect-btn');
 btn.addEventListener('click', async() => {
