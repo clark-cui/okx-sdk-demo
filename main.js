@@ -7,6 +7,7 @@ import {OKXUniversalProvider} from "@okxconnect/universal-provider";
 document.querySelector('#app').innerHTML = `
   <div>
   <button class="connect-btn">connect wallet</button>
+  <button class="chain-btn">change chain</button>
   </div>
 `
 let okxUniversalProvider= null;
@@ -59,3 +60,14 @@ btn.addEventListener('click', async() => {
     console.log(session,'session')
 })
 
+const chainBtn =document.querySelector('.chain-btn');
+btn.addEventListener('click', async() => {
+okxUniversalProvider.request({
+    "method": "wallet_switchEthereumChain",
+    "params": [
+        {
+            chainId: "eip155:43114"
+        }
+    ],
+  
+});
