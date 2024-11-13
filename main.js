@@ -39,16 +39,17 @@ btn.addEventListener('click', async() => {
         namespaces: {
             eip155: {
                 // 请按需组合需要的链id传入，多条链就传入多个
-                chains: ["eip155:1"],
+                chains: ["eip155:1","eip155:43114"],
                 rpcMap: {
                     1: "https://eth.blockrazor.xyz", // 和上面的chain一一对应，只需写数字链id
+                    43114:"https://eth.blockrazor.xyz",
                 },
                 defaultChain: "1"
             }
         },
         optionalNamespaces: {
             eip155: {
-                chains: ["eip155:1"]
+                chains: ["eip155:10"]
             }
         },
         sessionConfig: {
