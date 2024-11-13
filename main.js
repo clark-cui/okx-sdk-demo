@@ -18,6 +18,18 @@ const initFunc = async()=>{
         },
     })
     console.log(okxUniversalProvider,'okxUniversalProvider')
+  // 生成 universalLink  
+okxUniversalProvider.on("display_uri", (uri) => {
+    console.log(uri);
+});
+// session 信息变更（例如添加自定义链）会触发该事件；
+okxUniversalProvider.on("session_update", (session) => {
+    console.log(JSON.stringify(session));
+});
+// 断开连接会触发该事件；
+okxUniversalProvider.on("session_delete", ({topic}) => {
+    console.log(topic);
+});
 }
 initFunc();
 
