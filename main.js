@@ -69,5 +69,5 @@ okxUniversalProvider.request({
             chainId: "eip155:43114"
         }
     ],
-  
+});
 });
